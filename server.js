@@ -14,10 +14,9 @@ const normalizePort = (val) => {
   }
   return false;
 };
-app.set(
-  "port",
-  process.env.NODE_ENV === "production" ? process.env.PORT : port
-);
+
+const port = normalizePort(process.env.PORT || "5000");
+app.set("port", port);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
