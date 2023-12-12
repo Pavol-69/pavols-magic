@@ -1,0 +1,55 @@
+.vgt_card {
+  /*Position*/
+  position: relative;
+  margin: 5px;
+
+  /*Dimensions*/
+  height: 320px;
+  width: 233px;
+}
+
+.img_card {
+  /*Style*/
+  border-radius: 10px;
+
+  /*Dimensions*/
+  height: 310px;
+  width: 223px;
+
+  /*Style*/
+  background-color: black;
+
+  /*Autre*/
+  overflow: hidden;
+}
+
+.pqt_btn_vgt {
+  /*Position*/
+  position: absolute;
+  right: 5px;
+  top: 50px;
+
+  /*Dimensions*/
+  width: 40px;
+
+  /*Style*/
+  background-color: var(--main-color-nr);
+  color: var(--main-color-blc);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  opacity: 0.8;
+
+  /*Autre*/
+  overflow: hidden;
+}
+
+.carre_vgt {
+  /*Dimensions*/
+  height: 40px;
+}
+
+.btn_vgt:hover {
+  /*Style*/
+  background-color: var(--main-color-blc);
+  color: var(--main-color-nr);
+}

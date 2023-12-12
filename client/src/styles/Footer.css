@@ -1,0 +1,13 @@
+footer {
+  /*Position*/
+  position: absolute;
+  bottom: 0vh;
+
+  /*Dimensions*/
+  height: 25px;
+  width: 100%;
+
+  /*Style*/
+  background-color: var(--main-color-nr);
+  color: var(--main-color-blc);
+}

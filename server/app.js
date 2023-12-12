@@ -5,6 +5,7 @@ const path = require("path");
 module.exports = app;
 const userRoutes = require("./routes/user");
 const deckRoutes = require("./routes/deck");
+require("dotenv").config();
 
 var bodyParser = require("body-parser");
 
@@ -13,7 +14,13 @@ app.use(express.json());
 // Besoin de créer un compte MongoDB, je cache le mdp pour Github
 mongoose
   .connect(
-    "mongodb+srv://Pavol:4k1ta@mybdd.etrcplr.mongodb.net/",
+    "mongodb+srv://" +
+      process.env.DB_USER +
+      ":" +
+      process.env.DB_PASSWORD +
+      "@" +
+      process.env.DB_NAME +
+      ".etrcplr.mongodb.net/",
 
     {
       useNewUrlParser: true,
@@ -21,7 +28,7 @@ mongoose
     }
   )
   .then(() => console.log("Connexion a MongoDB reussie !"))
-  .catch(() => console.log("Connexion a MongoDB echouee !"));
+  .catch((err) => console.log("Connexion a MongoDB echouee ! " + err));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

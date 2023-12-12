@@ -1,0 +1,98 @@
+.vgt_deck_ctn {
+  /*Position*/
+  position: relative;
+  margin: 10px;
+
+  /*Dimensions*/
+  height: 315px;
+  width: 270px;
+
+  /*Style*/
+  border-radius: 5px;
+  background-color: black;
+
+  /*Autre*/
+  overflow: hidden;
+}
+
+.img_deck {
+  /*Style*/
+  border-radius: 15px;
+
+  /*Autre*/
+  overflow: hidden;
+}
+
+.menu_vgt_deck {
+  /*Position*/
+  position: absolute;
+
+  /*Dimensions*/
+  height: 250px;
+  width: 100%;
+
+  /*Style*/
+  background: linear-gradient(
+      rgba(255, 255, 255, 0),
+      var(--main-color-nr) 150px
+    )
+    no-repeat;
+  overflow-y: hidden;
+
+  /*Autre*/
+  transition: 0.5s;
+}
+
+.nom_vbt_deck {
+  /*Position*/
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 50px;
+
+  /*Dimensions*/
+  height: 50px;
+}
+
+.pqt_btn_vbt_deck {
+  /*Position*/
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+
+  /*Dimensions*/
+  height: 50px;
+}
+
+.btn_opn_deck,
+.btn_dlt_deck {
+  /*Position*/
+  position: absolute;
+  bottom: 0px;
+
+  /*Dimensions*/
+  height: 50px;
+}
+
+.btn_opn_deck {
+  /*Position*/
+  left: 0px;
+  right: 50%;
+}
+
+.btn_dlt_deck {
+  /*Position*/
+  left: 50%;
+  right: 0px;
+}
+
+.btn_opn_deck:hover {
+  /*Style*/
+  background-color: var(--color-hover);
+}
+
+.btn_dlt_deck:hover {
+  /*Style*/
+  background-color: var(--main-color-red);
+}
