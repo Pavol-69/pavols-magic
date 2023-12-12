@@ -9,7 +9,12 @@ module.exports = async (req, res, next) => {
       return res.status(403).json("Non autorisé");
     }
 
-    const payload = jwt.verify(jwtToken, process.env.TOKEN_SECRET);
+    const payload = jwt.verify(
+      jwtToken,
+      process.env.NODE_ENV === "production"
+        ? process.env.HEROKU_JWT_SECRET
+        : process.env.TOKEN_SECRET
+    );
 
     req.userId = payload.user;
 

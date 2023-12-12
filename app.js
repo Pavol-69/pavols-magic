@@ -14,13 +14,21 @@ app.use(express.json());
 // Besoin de créer un compte MongoDB, je cache le mdp pour Github
 mongoose
   .connect(
-    "mongodb+srv://" +
-      process.env.DB_USER +
-      ":" +
-      process.env.DB_PASSWORD +
-      "@" +
-      process.env.DB_NAME +
-      ".etrcplr.mongodb.net/",
+    process.env.NODE_ENV === "production"
+      ? "mongodb+srv://" +
+          process.env.HEROKU_DB_USER +
+          ":" +
+          process.env.HEROKU_DB_PASSWORD +
+          "@" +
+          process.env.HEROKU_DB_NAME +
+          ".etrcplr.mongodb.net/"
+      : "mongodb+srv://" +
+          process.env.DB_USER +
+          ":" +
+          process.env.DB_PASSWORD +
+          "@" +
+          process.env.DB_NAME +
+          ".etrcplr.mongodb.net/",
 
     {
       useNewUrlParser: true,

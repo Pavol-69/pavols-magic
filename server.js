@@ -1,5 +1,7 @@
 const http = require("http");
 const app = require("./app");
+const path = require("path");
+const express = require("express");
 
 const normalizePort = (val) => {
   const port = parseInt(val, 10);
@@ -12,8 +14,11 @@ const normalizePort = (val) => {
   }
   return false;
 };
-const port = normalizePort(process.env.PORT || "5000");
 app.set("port", port);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client/build")));
+}
 
 const errorHandler = (error) => {
   if (error.syscall !== "listen") {
@@ -43,6 +48,14 @@ server.on("listening", () => {
   const address = server.address();
   const bind = typeof address === "string" ? "pipe " + address : "port " + port;
   console.log("Listening on " + bind);
+});
+
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "client/build/index.html"), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
 });
 
 server.listen(port);
