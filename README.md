@@ -5,6 +5,8 @@ If you want to test this app, please use 2 different terminals, one for the back
 # BackEnd
 
 command : npm start
+	=> If there is an error saying taht the connection to MongoDB failed, please contact the owner : paul.valy@gmail.com
+
 
 # FrontEnd
 
