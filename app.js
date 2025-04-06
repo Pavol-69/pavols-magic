@@ -11,7 +11,7 @@ var bodyParser = require("body-parser");
 
 app.use(express.json());
 
-// Besoin de créer un compte MongoDB, je cache le mdp pour Github
+// Besoin de créer un compte MongoDB
 mongoose
   .connect(
     process.env.NODE_ENV === "production"
